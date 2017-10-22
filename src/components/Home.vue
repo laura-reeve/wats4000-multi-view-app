@@ -11,6 +11,7 @@
             <p><label for="email"></label><input type="email" id="email" v-model="email" tabindex="0" placeholder="Email"></p>
             <p><label for="password"></label><input type="password" id="password" v-model="password" tabindex="0" placeholder="Password"></p>
             <p><label for="passwordVerify"></label><input type="password" id="passwordVerify" v-model="passwordVerify" tabindex="0" placeholder="Verify Password"></p>
+            <p class="error" v-show="showPasswordError">Error - Passwords do not match!</p>
             <p><input type="submit" value="Submit"></p>
           </fieldset>
       </form>
@@ -32,7 +33,8 @@ export default {
       password: '',
       passwordVerify: '',
       showForm: true,
-      showError: false
+      showError: false,
+      showPasswordError: false
     }
   },
   methods: {
@@ -45,6 +47,8 @@ export default {
         (this.password === this.passwordVerify)) {
       // When the form is validated, show the .success-message content
       this.showForm = false;
+      } else if (this.password !== this.passwordVerify) {
+        this.showPasswordError = true;
       } else {
       // If the form is invalid, show the form error message
        this.showError = true;
