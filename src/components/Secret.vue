@@ -1,6 +1,6 @@
 <template>
     <div class="component">
-        <h2>{{message}}</h2>
+        <h2><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">{{message}}</a></h2>
         <router-link to="/">Return to Login page</router-link>
     </div>
 </template>
@@ -10,7 +10,7 @@
         name: 'Secret',
         data() {
             return {
-                message: 'You have reached the Secret page!'
+                message: 'Click here to claim your prize!'
             }
         }
     }
