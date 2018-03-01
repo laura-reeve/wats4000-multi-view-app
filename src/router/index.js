@@ -27,7 +27,7 @@ const router = new VueRouter(
 
 Vue.use(VueAnalytics, {
   // [Required] The name of your app as specified in Google Analytics.
-  appName: 'Sample Survey',
+  // appName: 'Sample Survey',
   // [Required] The version of your app.
   // appVersion: '<app_version>',
   // [Required] Your Google Analytics tracking ID.
