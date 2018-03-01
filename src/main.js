@@ -2,7 +2,20 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-// import router from './router'
+import VueAnalytics from 'vue-ua'
+import router from './router'
+
+
+Vue.use(VueAnalytics, {
+  // [Required] The name of your app as specified in Google Analytics.
+  appName: 'Sample Survey',
+  // [Required] The version of your app.
+  appVersion: '1.0',
+  // [Required] Your Google Analytics tracking ID.
+  trackingId: 'UA-114925962-1',
+  // If you're using vue-router, pass the router instance here.
+   vueRouter: router
+})
 
 Vue.config.productionTip = false
 
