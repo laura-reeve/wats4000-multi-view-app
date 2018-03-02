@@ -47,7 +47,7 @@
 
 <style scoped>
     .component {
-        background: #c7c7c7;
+        background: #f1efef;
         min-height: 400px;
         padding-left: 20px;
     }
