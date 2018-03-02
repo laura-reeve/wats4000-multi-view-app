@@ -1,40 +1,41 @@
 <template>
   <div class="survey">
-      <h1>New Member Survey</h1>
-      <p>Please complete the new member survey.</p>
+      <h1>Sign up for our Newsletter</h1>
+      <p>Please complete all of the questions below to sign up!</p>
       <form v-on:submit.prevent="validateForm"> 
 
         <p class="error" v-show="showError">Error - You must answer all of the questions to continue!</p>
-        <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
+        <p><label for="q1">Name:<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
 
-        <p>Q2: What languages interest you the most?<br>
-          <label v-for="language in languageOptions">
-            <input type="checkbox" v-model="q2" :value="language.value">
-            {{language.text}}
+        <p>What is your favorite warm beverage?<br>
+          <label v-for="beverage in beverageOptions">
+            <input type="checkbox" v-model="q2" :value="beverage.value">
+            {{beverage.text}}
           </label>
         </p>
 
-        <p>Q3: What other topics interest you?<br>
+        <p>What other cozy things interest you?<br>
           <label v-for="topic in topicOptions"> 
             <input type="checkbox" v-model="q3" :value="topic.value">
             {{topic.text}}
           </label>
         </p>
         <p>
-          <label for="q4">Q4: What kinds of websites would you like to build someday?<br>
+          <label for="q4">What does "being cozy" mean to you?<br>
             <textarea cols="70" rows="8" id="q4" v-model="q4" tabindex="0" placeholder="Type your response here."></textarea>
           </label>
         </p>
         <p>
-          <label for="q5">Q5: Spaces or Tabs?
+          <label for="q5">Snuggie or Onesie?
             <select id="q5" v-model="q5">
-              <option value="">Select your preference.</option>
-              <option value="spaces">Spaces</option>
-              <option value="tabs">Tabs</option>
+              <option value="">Select your preference:</option>
+              <option value="spaces">Snuggie</option>
+              <option value="tabs">Onesie</option>
+              <option value="other">Other</option>
             </select>
           </label>
         </p>
-        <p><input type="submit" value="Submit"></p>
+        <p><input v-on:submit.prevent="googleHit" id="signup-form" type="submit" value="Submit"></p>
       </form>
   </div>
 </template>
@@ -50,48 +51,48 @@ export default {
       q3: [],
       q4: '',
       q5: '',
-      languageOptions: [
+      beverageOptions: [
         {
-            text: 'JavaScript',
-            value: 'js'
+            text: 'Coffee',
+            value: 'coffee'
         },
         {
-            text: 'Python',
-            value: 'py'
+            text: 'Tea',
+            value: 'tea'
         },
         {
-            text: 'Ruby',
-            value: 'ruby'
+            text: 'Cider',
+            value: 'cider'
         },
         {
-            text: 'Java',
-            value: 'java'
+            text: 'Cocoa',
+            value: 'cocoa'
         },
         {
-            text: 'PHP',
-            value: 'php'
+            text: 'Other',
+            value: 'other'
         }
       ],
       topicOptions: [
         {
-            text: 'Accessibility',
-            value: 'axe'
+            text: 'Books',
+            value: 'books'
         },
         {
-            text: 'Experience Design',
-            value: 'ux'
+            text: 'Binge-watching TV',
+            value: 'TV'
         },
         {
-            text: 'Operations',
-            value: 'ops'
+            text: 'Internet',
+            value: 'internet'
         },
         {
-            text: 'Search Engine Optimization',
-            value: 'seo'
+            text: 'Fuzzy socks',
+            value: 'socks'
         },
         {
-            text: 'Multimedia',
-            value: 'media'
+            text: 'Blankets',
+            value: 'blankets'
         }
       ]
     }
@@ -114,8 +115,29 @@ export default {
       // If the data is not valid, alter the value of showError to show the error message.      
         this.showError = true;
       }
-    }
+    },
+     googleHit: function () { 
+    // Gets a reference to the form element, assuming
+    // it contains the id attribute "signup-form".
+    var form = document.getElementById('signup-form');
+
+    // Adds a listener for the "submit" event.
+    form.addEventListener('submit', function(event) {
+
+    // Prevents the browser from submitting the form
+    // and thus unloading the current page.
+    event.preventDefault();
+
+    // Sends the event to Google Analytics and
+    // resubmits the form once the hit is done.
+    ga('send', 'event', 'newsletter', 'click', 'sign-up button', {
+    hitCallback: function() {
+      form.submit();
+      }
+    });
+  });
   }
+}
 }
 </script>
 

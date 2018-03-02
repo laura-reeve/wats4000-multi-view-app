@@ -1,10 +1,10 @@
 <template>
     <div class="component">
-        <h2>Thanks for completing our survey!  Here are some songs that are awesome!</h2>
+        <h2>Thanks for signing up for our newsletter!  Here are some songs to help you get cozy!</h2>
         <ul v-for="song in songs">
             <li><a v-bind:href="'https://youtu.be/'+song.url" target="_blank">{{song.group}}: "{{song.title}}"</a></li>
         </ul>
-        <router-link to="/">Return to Login page</router-link>
+        <router-link id="home-link" to="/">Return to Home page</router-link>
     </div>
 </template>
 
@@ -15,23 +15,23 @@
             return {
                 songs: [
                     {
-                        url: "pBkHHoOIIn8",
-                        group: "Portugal. The Man",
-                        title: "Feel It Still"
+                        url: "cNXisvrK1_o",
+                        group: "Iron & Wine",
+                        title: "Each Coming Night"
                     }, 
-                    {    url: "B9FzVhw8_bY", 
-                        group: "The Dead South",
-                        title: "In Hell I'll Be In Good Company"
+                    {    url: "akvu1AOnUIw", 
+                        group: "John Mayer",
+                        title: "Who Says"
                     }, 
                     {
-                        url: "P_SlAzsXa7E",
-                        group: "Miike Snow",
-                        title: "Ghengis Khan"
+                        url: "wCEzoOpG1zQ",
+                        group: "Alexi Murdoch",
+                        title: "Breathe"
                     },
                     {
-                        url:"lDeB5sDealI",
-                        group: "Paloma Faith",
-                        title: "Upside Down"
+                        url:"NhqH-r7Xj0E",
+                        group: "Mary Lambert",
+                        title: "She Keeps Me Warm"
                     },
                     {
                         url: "dQw4w9WgXcQ", 
@@ -47,15 +47,19 @@
 
 <style scoped>
     .component {
-        background: #e8e8e8;
+        background: #c7c7c7;
         min-height: 400px;
         padding-left: 20px;
     }
     h2 {
         padding-top: 50px;
+        color: #ca401d;
     }
     li {
         list-style: none;
+    }
+    li:last-of-type {
+        margin-bottom: 10px;
     }
 
 </style>
