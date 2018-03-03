@@ -37,7 +37,7 @@
             </select>
           </label>
         </p>
-        <p><input onClick="ga(‘send’, ‘event’, ‘newsletter’, ‘click’, ‘signup form’);" type="submit" value="Submit"></p>
+        <p><input type="submit" value="Submit"></p>
       </form>
   </div>
 </template>
@@ -115,8 +115,9 @@ export default {
       // q5 must not be blank
         (this.q5 != '')) {
       // If all of the data is valid...
-/*
+
       // Activate GA tracking event
+      
       // Gets a reference to the form element, assuming
       // it contains the id attribute "signup-form".
       var form = document.getElementById('signup-form');
@@ -130,12 +131,12 @@ export default {
 
       // Sends the event to Google Analytics and
       // resubmits the form once the hit is done.
-      ga('send', 'event', 'newsletter', 'click', 'signup button', {
+      ga('send', 'event', 'newsletter', 'click', 'signup form', {
       hitCallback: function() {
         form.submit();
           }
         });
-      }); */
+      }); 
       // ...then use the $router to move the user to the Secret page.
         this.$router.push('Secret');
       } else {
