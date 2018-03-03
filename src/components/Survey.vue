@@ -2,7 +2,7 @@
   <div class="survey">
       <h1>Sign up for our Newsletter</h1>
       <p>Please complete all of the questions below to sign up!</p>
-      <form v-on:submit.prevent="validateForm"> 
+      <form id="signup-form" v-on:submit.prevent="validateForm"> 
 
         <p class="error" v-show="showError">Error - You must answer all of the questions to continue!</p>
         <p><label for="q1">Name:<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
@@ -35,7 +35,7 @@
             </select>
           </label>
         </p>
-        <p><input v-on:submit.prevent="googleHit" id="signup-form" type="submit" value="Submit"></p>
+        <p><input type="submit" value="Submit"></p>
       </form>
   </div>
 </template>
@@ -109,35 +109,36 @@ export default {
         (this.q4 != '') &&
       // q5 must not be blank
         (this.q5 != '')) {
-      // If all of the data is valid, then use the $router to move the user to the Secret page.
+      // If all of the data is valid...
+
+      // Activate GA tracking event
+      // Gets a reference to the form element, assuming
+      // it contains the id attribute "signup-form".
+      var form = document.getElementById('signup-form');
+
+      // Adds a listener for the "submit" event.
+      form.addEventListener('submit', function(event) {
+
+      // Prevents the browser from submitting the form
+      // and thus unloading the current page.
+      event.preventDefault();
+
+      // Sends the event to Google Analytics and
+      // resubmits the form once the hit is done.
+      ga('send', 'event', 'newsletter', 'click', 'signup button', {
+      hitCallback: function() {
+        form.submit();
+          }
+        });
+      });
+      // ...then use the $router to move the user to the Secret page.
         this.$router.push('Secret');
       } else {
       // If the data is not valid, alter the value of showError to show the error message.      
         this.showError = true;
       }
-    },
-     googleHit: function () { 
-    // Gets a reference to the form element, assuming
-    // it contains the id attribute "signup-form".
-    var form = document.getElementById('signup-form');
-
-    // Adds a listener for the "submit" event.
-    form.addEventListener('submit', function(event) {
-
-    // Prevents the browser from submitting the form
-    // and thus unloading the current page.
-    event.preventDefault();
-
-    // Sends the event to Google Analytics and
-    // resubmits the form once the hit is done.
-    ga('send', 'event', 'newsletter', 'click', 'sign-up button', {
-    hitCallback: function() {
-      form.submit();
-      }
-    });
-  });
+    }  
   }
-}
 }
 </script>
 
