@@ -131,7 +131,7 @@ export default {
 
       // Sends the event to Google Analytics and
       // resubmits the form once the hit is done.
-      ga('send', 'event', 'newsletter', 'click', 'signup form', {
+      ga('send', 'event', 'newsletter', 'click', 'signup form', '1', {
       hitCallback: function() {
         form.submit();
           }
