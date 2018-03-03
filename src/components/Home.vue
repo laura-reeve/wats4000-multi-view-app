@@ -3,7 +3,7 @@
     <h1>Cozy Home Life</h1>
     <h2>Everything you need to make your life more cozy</h2>
     <div id="center">
-      <button id="event-click"><router-link id="newsletter" to="/survey">Sign up for our Newsletter</router-link></button>
+      <button id="event-click"><router-link onCLick="ga('send','event','newsletter','click','home-to-survey');" id="newsletter" to="/survey">Sign up for our Newsletter</router-link></button>
     </div>
     <carousel>
       <slide>
