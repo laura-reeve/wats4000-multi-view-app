@@ -7,6 +7,8 @@
         <p class="error" v-show="showError">Error - You must answer all of the questions to continue!</p>
         <p><label for="q1">Name:<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
 
+        <p><label for="q1a">Email: <br><input type="email" id="q1.5" v-model="q1a"></label></p>
+
         <p>What is your favorite warm beverage?<br>
           <label v-for="beverage in beverageOptions">
             <input type="checkbox" v-model="q2" :value="beverage.value">
@@ -35,7 +37,7 @@
             </select>
           </label>
         </p>
-        <p><input type="submit" value="Submit"></p>
+        <p><input onClick="ga(‘send’, ‘event’, ‘newsletter’, ‘click’, ‘signup form’);" type="submit" value="Submit"></p>
       </form>
   </div>
 </template>
@@ -47,6 +49,7 @@ export default {
     return {
       showError: false,
       q1: '',
+      q1a: '',
       q2: [],
       q3: [],
       q4: '',
@@ -101,6 +104,8 @@ export default {
     validateForm: function () {
       // q1 must not be blank
       if ((this.q1 != '') &&
+      // q1a must not be blank
+        (this.q1a != '') &&
       // q2.length must be greater than 0
         (this.q2.length > 0) &&
       // q3.length must be greater than 0
@@ -110,7 +115,7 @@ export default {
       // q5 must not be blank
         (this.q5 != '')) {
       // If all of the data is valid...
-
+/*
       // Activate GA tracking event
       // Gets a reference to the form element, assuming
       // it contains the id attribute "signup-form".
@@ -130,7 +135,7 @@ export default {
         form.submit();
           }
         });
-      });
+      }); */
       // ...then use the $router to move the user to the Secret page.
         this.$router.push('Secret');
       } else {
