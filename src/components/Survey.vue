@@ -116,6 +116,7 @@ export default {
         (this.q5 != '')) {
       // If all of the data is valid...
 
+      /* This GA Event is not working
       // Activate GA tracking event
       
       // Gets a reference to the form element, assuming
@@ -137,6 +138,8 @@ export default {
           }
         });
       }); 
+      */
+      
       // ...then use the $router to move the user to the Secret page.
         this.$router.push('Secret');
       } else {
