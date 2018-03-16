@@ -37,7 +37,7 @@
             </select>
           </label>
         </p>
-        <p><input type="submit" value="Submit"></p>
+        <p><input id="button" type="submit" value="Submit"></p>
       </form>
   </div>
 </template>
@@ -153,6 +153,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.survey {
+  background-color: #a7a566;
+  padding: 10px;
+  border-radius: 5px;
+  color: #faebd7;
+}
 .error {
   border: 1px solid #aa0000;
   padding: 1rem;
@@ -160,15 +166,23 @@ export default {
 }
 h1, h2 {
   font-weight: normal;
+  font-family: "Tangerine", Arial, sans-serif;
+  font-size: 3em;
 }
-
+h1 {
+  font-size: 4em;
+  line-height: .5em;
+}
 ul {
   list-style-type: none;
   padding: 0;
 }
-
-
-a {
-  color: #42b983;
+#button {
+  font-size: 1em;
+  margin: 10px 10px 40px 10px;
+  padding: 5px 15px;
+  background-color: white;
+  border-radius: 8px;
+  color: brown;
 }
 </style>

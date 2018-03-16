@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import VueAnalytics from 'vue-ua'
 import router from './router'
-import VueCarousel from 'vue-carousel'
+// import VueCarousel from 'vue-carousel'
 
 
 Vue.use(VueAnalytics, {
@@ -18,7 +18,7 @@ Vue.use(VueAnalytics, {
    vueRouter: router
 })
 
-Vue.use(VueCarousel)
+// Vue.use(VueCarousel)
 
 Vue.config.productionTip = false
 

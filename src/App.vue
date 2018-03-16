@@ -21,12 +21,15 @@ export default {
   min-height: 100vh;
   height: 100%;
   margin: 0 auto;
-  background: #3d1010;
+  background: #8d4c3b;
   padding: 2rem;
 }
 body, html {
-  background: #666;
+  background: #e4dda2;
   margin: 0;
   padding: 0;
+}
+p {
+  font-size: 1em;
 }
 </style>

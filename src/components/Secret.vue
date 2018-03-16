@@ -4,7 +4,7 @@
         <ul v-for="song in songs">
             <li><a v-bind:href="'https://youtu.be/'+song.url" target="_blank">{{song.group}}: "{{song.title}}"</a></li>
         </ul>
-        <router-link id="home-link" to="/">Return to Home page</router-link>
+        <button><router-link id="home-link" to="/">Return to Home page</router-link></button>
     </div>
 </template>
 
@@ -47,19 +47,41 @@
 
 <style scoped>
     .component {
-        background: #f1efef;
+        background-color: #a7a566;
         min-height: 400px;
         padding-left: 20px;
+        border-radius: 5px;
     }
     h2 {
         padding-top: 50px;
-        color: #ca401d;
+        color: #faebd7;
+        font-family: "Tangerine", Arial, sans-serif;
+        font-weight: normal;
+        font-size: 3em;
+        line-height: .5em;
     }
     li {
         list-style: none;
     }
-    li:last-of-type {
-        margin-bottom: 10px;
+    a {
+        color:#faebd7;
     }
-
+    a:hover {
+        color: #c6b26c;
+    }
+    a:visited {
+        color: brown;
+    }
+    button {
+        font-size: 1em;
+        margin: 10px 10px 40px 10px;
+        padding: 5px 15px;
+        background-color: white;
+        border-radius: 8px;
+    }
+    #home-link {
+        text-decoration: none;
+        font-weight: bold;
+        color: brown;
+    }
 </style>
