@@ -7,7 +7,7 @@
     </div>
     <div class="grid-container">
         <div class="grid-item">
-          <router-link to="/atmosphere?image=fireplace">
+          <router-link to="/atmosphere/fireplace">
           <img src="../assets/Fireplace-resized.jpg" alt="fireplace" width="100%">
           </router-link>
           </div>

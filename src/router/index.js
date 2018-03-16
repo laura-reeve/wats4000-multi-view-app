@@ -27,7 +27,7 @@ export default new Router({
       component: Secret
     },
     {
-      path: '/atmosphere',
+      path: '/atmosphere/:mood',
       name: 'Atmosphere',
       component: Atmosphere
     }
