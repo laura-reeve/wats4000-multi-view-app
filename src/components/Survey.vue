@@ -1,13 +1,13 @@
 <template>
   <div class="survey">
       <h1>Sign up for our Newsletter</h1>
-      <p>Please complete all of the questions below to sign up!</p>
+      <p>Please complete of the *required questions below to sign up!</p>
       <form id="signup-form" v-on:submit.prevent="validateForm"> 
 
-        <p class="error" v-show="showError">Error - You must answer all of the questions to continue!</p>
-        <p><label for="q1">Name:<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
+        <p class="error" v-show="showError">Error - You must answer all of the *required questions to continue!</p>
+        <p><label for="q1">*Name:<br><input type="text" id="q1" v-model="q1" tabindex="0"></label></p>
 
-        <p><label for="q1a">Email: <br><input type="email" id="q1.5" v-model="q1a"></label></p>
+        <p><label for="q1a">*Email: <br><input type="email" id="q1.5" v-model="q1a"></label></p>
 
         <p>What is your favorite warm beverage?<br>
           <label v-for="beverage in beverageOptions">
@@ -105,42 +105,9 @@ export default {
       // q1 must not be blank
       if ((this.q1 != '') &&
       // q1a must not be blank
-        (this.q1a != '') &&
-      // q2.length must be greater than 0
-        (this.q2.length > 0) &&
-      // q3.length must be greater than 0
-        (this.q3.length > 0) &&
-      // q4 must not be blank
-        (this.q4 != '') &&
-      // q5 must not be blank
-        (this.q5 != '')) {
-      // If all of the data is valid...
-
-      /* This GA Event is not working
-      // Activate GA tracking event
-      
-      // Gets a reference to the form element, assuming
-      // it contains the id attribute "signup-form".
-      var form = document.getElementById('signup-form');
-
-      // Adds a listener for the "submit" event.
-      form.addEventListener('submit', function(event) {
-
-      // Prevents the browser from submitting the form
-      // and thus unloading the current page.
-      event.preventDefault();
-
-      // Sends the event to Google Analytics and
-      // resubmits the form once the hit is done.
-      ga('send', 'event', 'newsletter', 'click', 'signup form', '1', {
-      hitCallback: function() {
-        form.submit();
-          }
-        });
-      }); 
-      */
-      
-      // ...then use the $router to move the user to the Secret page.
+        (this.q1a != '')) {
+      // If all of the data is valid
+      // then use the $router to move the user to the Secret page.
         this.$router.push('Secret');
       } else {
       // If the data is not valid, alter the value of showError to show the error message.      

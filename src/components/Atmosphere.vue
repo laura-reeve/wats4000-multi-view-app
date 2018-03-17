@@ -2,8 +2,7 @@
   <div class="container"> 
     <h1>Welcome to your digital cozy atmosphere!</h1>
     <h2>Click the play button below to hear some soothing sounds or music.  We hope you feel cozier soon!</h2>
-      <img v-bind:src="currentMood.img">
-      <p v-bind:src="currentMood.audioID"></p>
+      <img v-bind:src="currentMood.img" width="100%">
     <button><router-link to="/" id="home-link">Go back Home</router-link></button>
   </div>
 </template>
@@ -18,7 +17,8 @@ export default {
           img: '../assets/Fireplace.jpg',
           audioID: 'I am an audio player'
         }
-      }
+      },
+      currentMood: {}
     }  
   },
   methods: {
