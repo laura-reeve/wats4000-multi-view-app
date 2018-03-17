@@ -8,14 +8,34 @@
     <div class="grid-container">
         <div class="grid-item">
           <router-link to="/atmosphere/fireplace">
-          <img src="../assets/Fireplace-resized.jpg" alt="fireplace" width="100%">
+            <img src="../assets/Fireplace-resized.jpg" alt="fireplace" width="100%">
           </router-link>
-          </div>
-        <div class="grid-item"><img src="../assets/book-and-mug-resized.jpg" alt="book and cococa with blanket" width="100%"></div>
-        <div class="grid-item"><img src="../assets/friends-and-mugs-resized.jpg" alt="cheers with mugs" width="100%"></div>
-        <div class="grid-item"><img src="../assets/book-in-bed-with-window-resized.jpg" alt="book in bed near a window" width="100%"></div>
-        <div class="grid-item"><img src="../assets/Cozy-by-tamaraR-deviantart-resized.jpg" alt="cat near fireplace with fairy" width="100%"></div>
-        <div class="grid-item"><img src="../assets/puppy-staying-cozy-in-a-towel-resized.jpg" alt="cute puppy in towel" width="100%"></div>
+        </div>
+        <div class="grid-item">
+          <router-link to="/atmosphere/cocoa">
+            <img src="../assets/book-and-mug-resized.jpg" alt="book and cococa with blanket" width="100%">
+          </router-link>
+        </div>
+        <div class="grid-item">
+          <router-link to="/atmosphere/friends">
+            <img src="../assets/friends-and-mugs-resized.jpg" alt="cheers with mugs" width="100%">
+          </router-link>
+        </div>
+        <div class="grid-item">
+          <router-link to="/atmosphere/book">
+            <img src="../assets/book-in-bed-with-window-resized.jpg" alt="book in bed near a window" width="100%">
+          </router-link>
+        </div>
+        <div class="grid-item">
+          <router-link to="/atmosphere/kitty">
+            <img src="../assets/Cozy-by-tamaraR-deviantart-resized.jpg" alt="cat near fireplace with fairy" width="100%">
+          </router-link>
+        </div>
+        <div class="grid-item">
+          <router-link to="/atmosphere/puppy">
+            <img src="../assets/puppy-staying-cozy-in-a-towel-resized.jpg" alt="cute puppy in towel" width="100%">
+          </router-link>
+        </div>
     </div>
   </div>
 </template>

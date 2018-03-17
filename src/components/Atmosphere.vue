@@ -14,17 +14,38 @@ export default {
     return {
       moods: {
         'fireplace': {
-          img: '../assets/Fireplace.jpg',
-          audioID: 'I am an audio player'
+          img: require('../assets/Fireplace.jpg'),
+          audioID: ''
+        },
+        'cocoa': {
+          img: require('../assets/book-and-mug.jpg'),
+          audioID: ''
+        },
+        'friends': {
+          img: require('../assets/friends-and-mugs.jpg'),
+          audioID: ''
+        },
+        'book': {
+          img: require('../assets/book-in-bed-with-window.jpg'),
+          audioID: ''
+        },
+        'kitty': {
+          img: require('../assets/Cozy-by-tamaraR-deviantart.jpg'),
+          audioID: ''
+        },
+        'puppy': {
+          img: require('../assets/puppy-staying-cozy-in-a-towel.jpg'),
+          audioID: ''
         }
       },
       currentMood: {}
     }  
   },
+  created () {
+      this.currentMood = this.moods[this.$route.params.mood];
+    },
   methods: {
-    created () {
-      this.currentMood = moods[this.$route.params.mood];
-    }
+    
   }
 }
 </script>
