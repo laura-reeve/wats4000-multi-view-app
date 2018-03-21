@@ -1,7 +1,13 @@
 <template>
   <div class="container"> 
     <h1>Welcome to your digital cozy atmosphere!</h1>
-    <h2>Click the play button below to hear some soothing sounds or music.  We hope you feel cozier soon!</h2>
+    <h2>Click the play button below to hear some soothing music.  We hope you feel cozier soon!</h2>
+      <div id="audio-player"><audio controls>
+        <!-- <source src="horse.ogg" type="audio/ogg"> -->
+        <source v-bind:src="currentMood.audio" type="audio/mpeg">
+        Your browser does not support this audio element.
+      </audio></div>
+    <p>Royalty free music provided by <a href="https://www.bensound.com">Bensound</a></p>  
       <img v-bind:src="currentMood.img" width="100%">
     <button><router-link to="/" id="home-link">Go back Home</router-link></button>
   </div>
@@ -15,27 +21,27 @@ export default {
       moods: {
         'fireplace': {
           img: require('../assets/Fireplace.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-tenderness.mp3')
         },
         'cocoa': {
           img: require('../assets/book-and-mug.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-acousticbreeze.mp3')
         },
         'friends': {
           img: require('../assets/friends-and-mugs.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-happiness.mp3')
         },
         'book': {
           img: require('../assets/book-in-bed-with-window.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-november.mp3')
         },
         'kitty': {
           img: require('../assets/Cozy-by-tamaraR-deviantart.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-memories.mp3')
         },
         'puppy': {
           img: require('../assets/puppy-staying-cozy-in-a-towel.jpg'),
-          audioID: ''
+          audio: require('../assets/bensound-cute.mp3')
         }
       },
       currentMood: {}
@@ -67,6 +73,19 @@ h1, h2 {
 h1 {
   font-size: 4em;
   line-height: .5em;
+}
+#audio-player, p {
+  text-align: center;
+  color: #faebd7;
+}
+a {
+  color:#faebd7;
+}
+a:hover {
+  color: #c6b26c;
+}
+a:visited {
+  color: brown;
 }
 button {
   font-size: 1em;
