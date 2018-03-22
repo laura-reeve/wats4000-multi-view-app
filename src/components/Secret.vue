@@ -58,7 +58,7 @@
         font-family: "Tangerine", Arial, sans-serif;
         font-weight: normal;
         font-size: 3em;
-        line-height: .5em;
+        margin: .5em;
     }
     li {
         list-style: none;

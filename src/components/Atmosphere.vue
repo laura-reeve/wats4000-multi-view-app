@@ -72,7 +72,7 @@ h1, h2 {
 }
 h1 {
   font-size: 4em;
-  line-height: .5em;
+  margin: .5em;
 }
 #audio-player, p {
   text-align: center;

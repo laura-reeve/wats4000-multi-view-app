@@ -24,7 +24,7 @@
         </p>
         <p>
           <label for="q4">What does "being cozy" mean to you?<br>
-            <textarea cols="70" rows="8" id="q4" v-model="q4" tabindex="0" placeholder="Type your response here."></textarea>
+            <textarea cols="35" rows="8" id="q4" v-model="q4" tabindex="0" placeholder="Type your response here."></textarea>
           </label>
         </p>
         <p>
@@ -33,7 +33,8 @@
               <option value="">Select your preference:</option>
               <option value="spaces">Snuggie</option>
               <option value="tabs">Onesie</option>
-              <option value="other">Other</option>
+              <option value="other">Both</option>
+              <option value="other">Neither</option>
             </select>
           </label>
         </p>
@@ -138,7 +139,7 @@ h1, h2 {
 }
 h1 {
   font-size: 4em;
-  line-height: .5em;
+  margin: .5em;
 }
 ul {
   list-style-type: none;
